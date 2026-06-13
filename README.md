@@ -110,4 +110,8 @@ Edit that source, then run `pnpm run readme:sync`.
   and greater than the sum of its parts.
 </p>
 
+<p>
+  <a href="https://perillacove.com/writing">Writings</a>
+</p>
+
 <!-- prettier-ignore-end -->

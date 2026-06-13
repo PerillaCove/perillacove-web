@@ -78,6 +78,9 @@ const imageBlock = `<p align="center">
     metadata.imageAlt,
   )}" width="100%" />
 </p>`;
+const readmeFooter = `<p>
+  <a href="https://perillacove.com/writing">Writings</a>
+</p>`;
 
 const readme = `<!--
 This file is generated from src/components/Forest/ultimate_truth.html.
@@ -93,6 +96,8 @@ ${beforeImageBlocks.join("\n\n")}
 ${imageBlock}
 
 ${afterImageBlocks.join("\n\n")}
+
+${readmeFooter}
 
 <!-- prettier-ignore-end -->
 `;
