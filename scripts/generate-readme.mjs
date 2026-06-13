@@ -79,7 +79,7 @@ const imageBlock = `<p align="center">
   )}" width="100%" />
 </p>`;
 const readmeFooter = `<p>
-  <a href="https://perillacove.com/writing">Writings</a>
+  <a href="https://perillacove.com/writing" target="_blank" rel="noopener noreferrer">Writings</a>
 </p>`;
 
 const readme = `<!--

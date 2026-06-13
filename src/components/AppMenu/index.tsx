@@ -63,6 +63,11 @@ const AppMenu: FC = () => {
           ),
       },
       {
+        icon: "fa-regular fa-code",
+        text: "Code",
+        action: () => window.open("https://github.com/PerillaCove", "_blank"),
+      },
+      {
         icon: "fa-regular fa-question",
         text: "Contact",
         action: () => {
