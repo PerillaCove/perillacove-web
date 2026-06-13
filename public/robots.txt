@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://perillacove.com/writing/sitemap_index.xml

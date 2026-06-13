@@ -1,0 +1,61 @@
+{
+  "name": "perillacove",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "packageManager": "pnpm@9.15.9",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "predev": "pnpm run readme:sync",
+    "dev": "vite",
+    "prebuild": "pnpm run readme:sync",
+    "build": "tsc -b && vite build",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "lint:fix": "eslint . --ext ts,tsx --ignore-pattern '**/*.geojson' --fix && prettier --write . --ignore-path .prettierignore",
+    "preview": "vite preview",
+    "readme:sync": "node scripts/generate-readme.mjs",
+    "readme:check": "node scripts/generate-readme.mjs --check",
+    "qp": "git add . && git commit -m 'a' && git push && pnpm dev",
+    "lqp": "pnpm lint:fix && pnpm qp",
+    "qpb": "git add . && git commit -m 'a' && git push origin ${0:-main} && pnpm dev",
+    "lqpb": "pnpm lint:fix && pnpm qpb ${0:-main}",
+    "test": "vitest",
+    "prepare": "husky"
+  },
+  "dependencies": {
+    "@react-three/drei": "^9.99.0",
+    "@react-three/fiber": "^8.15.0",
+    "@tanstack/react-virtual": "^3.13.12",
+    "clsx": "^2.1.1",
+    "jotai": "^2.9.0",
+    "motion": "^12.4.10",
+    "prettier": "^3.3.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.1",
+    "recharts": "^2.15.1",
+    "three": "^0.161.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@types/three": "^0.161.0",
+    "@typescript-eslint/eslint-plugin": "^7.13.1",
+    "@typescript-eslint/parser": "^7.13.1",
+    "@vitejs/plugin-react-swc": "^3.5.0",
+    "autoprefixer": "^10.4.19",
+    "eslint": "^8.57.0",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "eslint-plugin-react-refresh": "^0.4.7",
+    "happy-dom": "^20.0.7",
+    "husky": "^9.1.7",
+    "postcss": "^8.4.39",
+    "tailwindcss": "^3.4.4",
+    "typescript": "^5.2.2",
+    "vite": "^7.1.5",
+    "vite-plugin-svgr": "^4.2.0",
+    "vitest": "^3.2.4"
+  }
+}

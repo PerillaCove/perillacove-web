@@ -1,0 +1,316 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --perillacove-document-bg-color: #0d1712;
+  --perillacove-document-bg-image: none;
+  color-scheme: dark light;
+  background-color: var(--perillacove-document-bg-color);
+}
+
+html {
+  min-height: 100%;
+  background-color: var(--perillacove-document-bg-color);
+}
+
+body,
+#root {
+  min-height: 100vh;
+  min-height: 100dvh;
+  background-color: var(--perillacove-document-bg-color);
+}
+
+html.perillacove-immersive-panorama,
+html.perillacove-immersive-panorama body,
+html.perillacove-immersive-panorama #root {
+  background-color: var(--perillacove-document-bg-color);
+  background-image: var(--perillacove-document-bg-image);
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: auto 100vh;
+  background-size: auto 100dvh;
+}
+
+@layer utilities {
+  .bg-light-gradient {
+    background-image: linear-gradient(
+      to right,
+      theme("colors.white"),
+      theme("colors.slate.100")
+    );
+  }
+  .hide-feature {
+    @apply hidden;
+  }
+  .bg-white-gradient {
+    background-image: linear-gradient(
+      to right,
+      theme("colors.white"),
+      theme("colors.white")
+    );
+  }
+  .bg-dark-gradient {
+    background-image: linear-gradient(
+      to right,
+      theme("colors.neutral.900"),
+      theme("colors.neutral.800")
+    );
+  }
+  .bg-cove-gradient {
+    @apply bg-gradient-to-r from-amber-50 to-cyan-50;
+  }
+  .bg-cove-gradient-reverse {
+    @apply bg-gradient-to-r from-cyan-50 to-amber-50;
+  }
+  .bg-combo {
+    @apply bg-gradient-to-r from-slate-700 to-slate-900;
+  }
+  .bg-combo-reverse {
+    @apply bg-gradient-to-l from-slate-700 to-slate-900;
+  }
+  .color-ai {
+    @apply border border-neutral-200/70 bg-gradient-to-br from-emerald-50/75 via-white to-emerald-100/70 text-black hover:from-emerald-100/80 hover:to-emerald-200/70 dark:border-neutral-700/80 dark:from-emerald-950/30 dark:via-neutral-900 dark:to-emerald-950/35 dark:text-white dark:hover:from-emerald-900/35 dark:hover:to-emerald-900/45;
+  }
+  .color-ai-reverse {
+    @apply bg-gradient-to-l from-cyan-500 to-amber-500 via-slate-400 dark:from-cyan-500 dark:to-amber-500 text-white dark:text-black;
+  }
+  .border-combo {
+    @apply dark:border border-neutral-500;
+  }
+  .border-circadian {
+    @apply border-slate-300 dark:border-slate-500;
+  }
+  .bg-circadian {
+    @apply dark:bg-dark-gradient bg-light-gradient;
+  }
+  .bg-circadian-btn {
+    @apply dark:bg-dark-gradient bg-slate-200;
+  }
+  .bg-circadian-btn-reverse {
+    @apply bg-dark-gradient dark:bg-slate-200;
+  }
+  .btn-theme {
+    @apply bg-gradient-to-r from-cyan-300 to-amber-300 via-slate-50;
+  }
+  .btn-circadian {
+    @apply dark:bg-combo dark:border-combo dark:border btn-theme;
+  }
+  .btn-aura {
+    @apply bg-gradient-to-r from-purple-500 to-purple-700 text-white;
+  }
+  .text-aura {
+    @apply text-purple-600 dark:text-purple-400;
+  }
+  .text-plating {
+    @apply text-blue-600 dark:text-blue-400;
+  }
+}
+
+/* cyan-600 amber-600 */
+.text-cove {
+  background-image: linear-gradient(to right, #0891b2, #d97706);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline;
+}
+
+.text-combo {
+  background-image: linear-gradient(to right, #64748b, #0f172a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.text-combo-dark {
+  background-image: linear-gradient(to right, #cbd5e1, #64748b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+/* cyan-300 amber-400 */
+.text-cove-dark {
+  background-image: linear-gradient(to right, #67e8f9, #fbbf24);
+  /* background-image: linear-gradient(to right, #bae6fd, #fed7aa); */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline;
+}
+
+/* ── Brand title (PerillaCove wordmark) ── */
+
+.brand-title {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+@media (min-width: 640px) {
+  .brand-title {
+    letter-spacing: 0.25em;
+  }
+}
+
+@media (min-width: 768px) {
+  .brand-title {
+    letter-spacing: 0.35em;
+  }
+}
+
+/* ── Brand tagline ("~ becoming nature ~") ── */
+
+.brand-tagline {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 300;
+  text-transform: lowercase;
+  letter-spacing: 0.1em;
+  color: #78716c; /* stone-500 */
+}
+
+@media (min-width: 640px) {
+  .brand-tagline {
+    letter-spacing: 0.2em;
+  }
+}
+
+@media (min-width: 768px) {
+  .brand-tagline {
+    letter-spacing: 0.25em;
+  }
+}
+
+/* ── Brand radial glow (subtle emerald ellipse behind content) ── */
+
+.brand-glow {
+  position: absolute;
+  inset: 0;
+  opacity: 0.25;
+  background-image: radial-gradient(
+    ellipse at 50% 40%,
+    #d1fae5 0%,
+    transparent 70%
+  );
+}
+
+:is(.dark) .brand-glow {
+  background-image: radial-gradient(
+    ellipse at 50% 40%,
+    #1a3a2a 0%,
+    transparent 70%
+  );
+}
+
+/* ── Shared collapse/expand (CSS Grid 0fr→1fr) ── */
+
+.collapse-grid {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.collapse-grid-open {
+  grid-template-rows: 1fr;
+}
+
+/* TipTap ingredient link highlight for chat rendering */
+@keyframes ingredientAppear {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+    background-color: rgba(217, 119, 6, 0.5);
+  }
+  50% {
+    transform: scale(1.02);
+    background-color: rgba(217, 119, 6, 0.4);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes sparkle {
+  0%,
+  100% {
+    opacity: 0;
+    transform: scale(0) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1) rotate(180deg);
+  }
+}
+
+.ingredient-link {
+  position: relative;
+  background-color: rgba(217, 119, 6, 0.35);
+  border-radius: 0.25rem;
+  padding: 0.05rem 0.1rem;
+  margin: -0.05rem 0;
+  animation: ingredientAppear 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  display: inline-block;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.ingredient-link::after {
+  content: "✨";
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  font-size: 12px;
+  pointer-events: none;
+  animation: sparkle 0.8s ease-out forwards;
+  animation-delay: 0.1s;
+}
+
+.ingredient-link:hover {
+  background-color: rgba(217, 119, 6, 0.5);
+  transform: scale(1.05);
+  box-shadow: 0 2px 8px rgba(217, 119, 6, 0.3);
+}
+
+.dark .ingredient-link {
+  background-color: rgba(217, 119, 6, 0.45);
+}
+
+.dark .ingredient-link:hover {
+  background-color: rgba(217, 119, 6, 0.65);
+  transform: scale(1.05);
+  box-shadow: 0 2px 8px rgba(217, 119, 6, 0.4);
+}
+
+/* Reuse delete button styling so it anchors to the highlight's corner */
+.ingredient-link-delete-button {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  font-size: 11.5px;
+  line-height: 16px;
+  text-align: center;
+  background-color: rgba(217, 119, 6, 1);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes flash {
+  0% {
+    background-color: transparent;
+  }
+  50% {
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+.flash-highlight {
+  animation: flash 1s ease-out;
+}
