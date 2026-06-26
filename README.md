@@ -112,8 +112,8 @@ Edit that source, then run `pnpm run readme:sync`.
 </p>
 
 <p>
-  So instead of trying to predict the future, we look to restore the conditions
-  under which we can meet the future ... because the integrated system is the
+  So instead of trying to predict the future, I look to restore the conditions
+  under which I can meet the future ... because the integrated system is the
   ultimate vessel for life in all layers, phases, and forms.
 </p>
 
